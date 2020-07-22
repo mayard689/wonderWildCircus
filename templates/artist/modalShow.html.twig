@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artist{% endblock %}
+
+{% block body %}
+
+    <div class="row pt-5">
+        <div class="col-12">
+            <h5>{{ artist.title }}</h5>
+            <p>{{ artist.story }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label>Age : </label>
+            <span>{{ artist.age }} ans.</span>
+        </div>
+        <div class="col-6">
+            <label>Taille : </label>
+            <span>{{ artist.height }}m.</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+                <label>Origine : </label>
+                <span>{{ artist.origin }}.</span>
+        </div>
+        <div class="col-6">
+                <label>Particularités : </label>
+                <span>{{ artist.particularity }}.</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+                <label>Fait incroyable : </label>
+                <p>{{ artist.incredible }}.</p>
+        </div>
+    </div>
+
+{% endblock %}
