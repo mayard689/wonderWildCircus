@@ -5,48 +5,30 @@
 {% block body %}
     <h1>Artist index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Title</th>
-                <th>Story</th>
-                <th>Age</th>
-                <th>Height</th>
-                <th>Origin</th>
-                <th>Particularity</th>
-                <th>Incredible</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+
+
         {% for artist in artists %}
-            <tr>
-                <td>{{ artist.id }}</td>
-                <td>{{ artist.name }}</td>
-                <td>{{ artist.title }}</td>
-                <td>{{ artist.story }}</td>
-                <td>{{ artist.age }}</td>
-                <td>{{ artist.height }}</td>
-                <td>{{ artist.origin }}</td>
-                <td>{{ artist.particularity }}</td>
-                <td>{{ artist.incredible }}</td>
-                <td>
+            <div class="artist">
+                <p>{{ artist.id }}</p>
+                <p>{{ artist.name }}</p>
+                <p>{{ artist.title }}</p>
+                <p>{{ artist.story }}</p>
+                <p>{{ artist.age }}</p>
+                <p>{{ artist.height }}</p>
+                <p>{{ artist.origin }}</p>
+                <p>{{ artist.particularity }}</p>
+                <p>{{ artist.incredible }}</p>
+                <p>
                     <a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>
                     {% if is_granted('ROLE_ADMIN') %}
                         <a href="{{ path('artist_edit', {'id': artist.id}) }}">edit</a>
                     {%  endif %}
-
-                </td>
-            </tr>
+                </p>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="10">no records found</td>
-            </tr>
+                <p colspan="10">no records found</p>
         {% endfor %}
-        </tbody>
-    </table>
+
 
     {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('artist_new') }}">Create new</a>
