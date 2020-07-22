@@ -33,7 +33,7 @@ class ArtistFixtures extends Fixture
             $artist->setOrigin($faker->country);
             $artist->setParticularity($faker->sentence);
             $artist->setIncredible($faker->sentence);
-
+            $artist->setPicture('artist-'.$gender.'-'.rand(1,10));
             $this->addReference('artist_' .$i, $artist);
             $manager->persist($artist);
         }

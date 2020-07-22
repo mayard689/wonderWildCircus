@@ -1,18 +1,21 @@
 <div class="artist row">
 
-    <div class="col-sm-12 col-md-6 artist-picture">
-
+    <div class="col-sm-12 col-md-6 ">
+        <img class="artist-picture"
+             src="/upload/artists/{{ artist.picture }}.jpg"
+             alt="Photo de {{artist.name}}">
     </div>
 
     <div class="col-sm-12 col-md-6 artist-data">
         <p>{{ artist.name }}</p>
         <p>{{ artist.title }}</p>
         <p>{{ artist.story }}</p>
+        {#
         <p>{{ artist.age }}</p>
         <p>{{ artist.height }}</p>
         <p>{{ artist.origin }}</p>
         <p>{{ artist.particularity }}</p>
-        <p>{{ artist.incredible }}</p>
+        <p>{{ artist.incredible }}</p>#}
         <p>
             <a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>
             {% if is_granted('ROLE_ADMIN') %}

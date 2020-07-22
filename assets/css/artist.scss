@@ -8,3 +8,22 @@
   }
 }
 
+
+.artist-picture{
+  $width:250px;
+  width:$width;
+  height:$width;
+
+  max-width:70vw;
+  max-height:70vw;
+
+  overflow:hidden;
+  border-radius:50%;
+
+  margin:auto;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  object-fit: cover;
+}
