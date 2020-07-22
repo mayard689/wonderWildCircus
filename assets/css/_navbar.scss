@@ -1,0 +1,60 @@
+
+
+.navbar-nav .active > .nav-link {
+  color: var(--primary);
+}
+
+.navbar {
+
+  padding:0;
+  height : $navbar-height;
+
+  .navbar-nav {
+    justify-content: flex-end;
+    width: 100%;
+
+    .nav-item{
+
+
+      line-height: 21px;
+
+      word-spacing: 0;
+
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-align: center;
+      text-indent: 0px;
+
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 1.5em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  z-index: 100;
+}
+
+//resetting navbar color theme
+.navbar-light .navbar-nav .nav-link{
+  $color: rgb(20, 70, 145);
+  color: $color;
+  opacity:70%;
+
+  &.active{
+    color: $color;
+    opacity:100%;
+  }
+
+  &.disabled{
+    color: $color;
+    opacity:50%;
+  }
+}
+
+.navbar-logo{
+  height:$navbar-height * 0.8;
+  margin:$spacing-h-small;
+}
