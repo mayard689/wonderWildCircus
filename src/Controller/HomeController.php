@@ -13,8 +13,8 @@ class HomeController extends AbstractController
      */
     public function index() :Response
     {
-        return new Response(
-            '<html><body>Wild Circus HomePage</body></html>'
-        );
+        return $this->render('home/index.html.twig', [
+            'name' => 'Wonder Wild Circus',
+        ]);
     }
 }
