@@ -1,3 +1,5 @@
+@import "_vars";
+
 .introduction{
   width:100vw;
   height:100vh;
@@ -21,4 +23,30 @@
     }
 
   }
+}
+
+.story{
+  position:relative;
+}
+.story-part{
+  margin: $spacing-w-normal;
+}
+
+.story-picture{
+  width : 50%;
+}
+
+.show-perspective{
+  hperspective-origin: center;
+  perspective: 800px;
+}
+
+.show-card{
+  min-width:30%;
+  margin : $spacing-w-normal;
+
+  &:hover{
+    transform: rotateX(45deg);
+  }
+
 }

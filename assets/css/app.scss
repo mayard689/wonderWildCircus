@@ -1,5 +1,6 @@
 @import "_vars";
 @import "~bootstrap/scss/bootstrap";
+@import "_navbar";
 
 @font-face {
     font-family: 'CircusCaps';
@@ -16,21 +17,24 @@
     src: url(../fonts/montserrat-light.ttf) format('truetype');
 }
 
-body {
-    background-color: $background;
-}
-
 h1{
     font-family: "CircusCaps";
-    color:$primary;
+    color: $primary;
+    margin-top: $navbar-height + 10px;
+    text-align: center;
 }
 
 h2{
     font-family: "Bodoni";
     color:$primary;
+    text-align: center;
 }
 
 p{
     font-family: "Montserrat";
     color:$dark;
+}
+
+section{
+    padding: $spacing-h-large;
 }
