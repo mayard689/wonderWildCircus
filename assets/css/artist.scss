@@ -2,6 +2,8 @@
 
 .artist{
   margin: $spacing-w-normal;
+  margin-top : $spacing-w-large;
+  margin-bottom : $spacing-w-large;
 
   &:nth-of-type(2n){
     flex-direction: row-reverse;
@@ -17,7 +19,7 @@
   max-width:70vw;
   max-height:70vw;
 
-  overflow:hidden;
+  xoverflow:hidden;
   border-radius:50%;
 
   margin:auto;
@@ -26,4 +28,26 @@
   justify-content: center;
 
   object-fit: cover;
+
+  position:relative;
+}
+
+.artiste-picture-wrapper{
+  position:relative;
+
+  &:after {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform:translateX(-20px);
+    content: " ";
+
+
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #431005;
+    z-index:100;
+  }
 }
