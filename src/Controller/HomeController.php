@@ -14,7 +14,7 @@ class HomeController extends AbstractController
      */
     public function index(ShowRepository $showRepository) :Response
     {
-        $shows = $showRepository->findAll();
+        $shows = $showRepository->findComming();
         return $this->render('home/index.html.twig', [
             'shows' => $shows,
         ]);
