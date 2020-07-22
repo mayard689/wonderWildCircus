@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b7c815e-bac6-43a2-be41-399a908e269b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/css/homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/homepage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/ShowFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wonderWildCircus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wonderWildCircus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +126,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
     </include_path>
   </component>
   <component name="ProjectId" id="1f2Wm3yOp6P8smMZ0cK1UyLB9mY" />
@@ -154,7 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595416823084</updated>
       <workItem from="1595416824451" duration="7951000" />
-      <workItem from="1595425533033" duration="4746000" />
+      <workItem from="1595425533033" duration="5944000" />
     </task>
     <servers />
   </component>
@@ -166,9 +176,18 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2585" y="344" width="579" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595420849441" />
-    <state x="654" y="333" width="601" height="373" key="NewPhpClassDialog" timestamp="1595416844782">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state x="2613" y="297" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595433700676">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2613" y="297" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595433700676" />
+    <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595433150688">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595433150688" />
+    <state x="2574" y="334" width="617" height="408" key="NewPhpClassDialog" timestamp="1595433240370">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="654" y="333" width="601" height="373" key="NewPhpClassDialog/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1595416844782" />
+    <state x="2574" y="334" width="617" height="408" key="NewPhpClassDialog/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595433240370" />
   </component>
 </project>
