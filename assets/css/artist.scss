@@ -28,8 +28,6 @@
   justify-content: center;
 
   object-fit: cover;
-
-  position:relative;
 }
 
 .artiste-picture-wrapper{
@@ -40,14 +38,50 @@
     bottom: -20px;
     left: 50%;
     transform:translateX(-20px);
+
     content: " ";
-
-
     width: 0px;
     height: 0px;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 20px solid #431005;
     z-index:100;
+  }
+
+  &:before {
+    position: absolute;
+    bottom: -95px - 20px;
+    left: 50%;
+
+    content:" ";
+    width: 100px;
+    height: 100px;
+    border: solid 3px #000;
+    border-color: transparent transparent transparent #431005;
+
+    $a:60px;
+    $b:50px;
+    border-bottom-right-radius: $a 0px;
+    border-bottom-left-radius:  $b 100px;
+
+    animation: 2s ease-in-out infinite pulse;
+    animation-direction: alternate;
+
+  }
+}
+
+@keyframes pulse {
+  0% {
+    $a:20px;
+    $b:30px;
+    border-bottom-right-radius: $a 0px;
+    border-bottom-left-radius:  $b 100px;
+  }
+
+  100% {
+    $a:70px;
+    $b:50px;
+    border-bottom-right-radius: $a 0px;
+    border-bottom-left-radius:  $b 100px;
   }
 }
