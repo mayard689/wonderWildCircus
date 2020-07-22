@@ -29,6 +29,7 @@ h1{
 h2{
     font-family: "Bodoni";
     color:$primary;
+    text-align: center;
 }
 
 p{
@@ -36,3 +37,6 @@ p{
     color:$dark;
 }
 
+section{
+    padding: $spacing-h-large;
+}

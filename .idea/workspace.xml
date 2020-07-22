@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b7c815e-bac6-43a2-be41-399a908e269b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/pictures/elephant-b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/pictures/elephant-g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/pictures/elephant-r.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/pictures/elephant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/_navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/homepage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595416823084</updated>
       <workItem from="1595416824451" duration="7951000" />
-      <workItem from="1595425533033" duration="1068000" />
+      <workItem from="1595425533033" duration="4746000" />
     </task>
     <servers />
   </component>
