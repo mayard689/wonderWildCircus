@@ -1,0 +1,10 @@
+@import "_vars";
+
+.artist{
+  margin: $spacing-w-normal;
+
+  &:nth-of-type(2n){
+    flex-direction: row-reverse;
+  }
+}
+

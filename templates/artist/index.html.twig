@@ -1,37 +1,24 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('artist') }}
+{% endblock %}
+
 {% block title %}Artist index{% endblock %}
 
 {% block body %}
     <h1>Artist index</h1>
 
-
-
+    <section class="artists container">
         {% for artist in artists %}
-            <div class="artist">
-                <p>{{ artist.id }}</p>
-                <p>{{ artist.name }}</p>
-                <p>{{ artist.title }}</p>
-                <p>{{ artist.story }}</p>
-                <p>{{ artist.age }}</p>
-                <p>{{ artist.height }}</p>
-                <p>{{ artist.origin }}</p>
-                <p>{{ artist.particularity }}</p>
-                <p>{{ artist.incredible }}</p>
-                <p>
-                    <a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('artist_edit', {'id': artist.id}) }}">edit</a>
-                    {%  endif %}
-                </p>
-            </div>
+            {{ include('artist/_artistLine.html.twig', {'artist': artist}) }}
         {% else %}
-                <p colspan="10">no records found</p>
+            <p colspan="10">no records found</p>
         {% endfor %}
-
+    </section>
 
     {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('artist_new') }}">Create new</a>
     {%  endif %}
-
 {% endblock %}
