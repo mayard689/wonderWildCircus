@@ -23,7 +23,8 @@ body {
 
 h1{
     font-family: "CircusCaps";
-    color:$primary;
+    color: $primary;
+    margin-top: $navbar-height + 10px;
 }
 
 h2{

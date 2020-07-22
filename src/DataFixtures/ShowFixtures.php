@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Show;
-use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -29,13 +28,5 @@ class ShowFixtures extends Fixture
         }
         $manager->flush();
 
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getDependencies()
-    {
-        return [CategoryFixtures::class];
     }
 }
