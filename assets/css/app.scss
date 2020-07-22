@@ -2,8 +2,9 @@
 
 body {
     background-color: lightgray;
+
+    h1{
+        color:$danger;
+    }
 }
 
-h1{
-    color:$primary;
-}
