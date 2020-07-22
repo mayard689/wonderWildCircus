@@ -34,7 +34,10 @@
                 <td>{{ artist.incredible }}</td>
                 <td>
                     <a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>
-                    <a href="{{ path('artist_edit', {'id': artist.id}) }}">edit</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('artist_edit', {'id': artist.id}) }}">edit</a>
+                    {%  endif %}
+
                 </td>
             </tr>
         {% else %}
@@ -45,5 +48,8 @@
         </tbody>
     </table>
 
-    <a href="{{ path('artist_new') }}">Create new</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('artist_new') }}">Create new</a>
+    {%  endif %}
+
 {% endblock %}
