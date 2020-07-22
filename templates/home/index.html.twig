@@ -22,7 +22,6 @@
     </section>
 
     <section class="story container">
-
         <h2>Venez ecouter notre histoire...</h2>
         <div class="row story-part ">
             <div class="col-sm-12 col-md-6">
@@ -32,16 +31,12 @@
             <div class="col"><img class="story-picture" src="/images/pictures/acrobat.png"></div>
         </div>
 
-
-
         <div class="row story-part ">
             <div class="col"><img class="story-picture" src="/images/pictures/elephant.png"></div>
             <div class="col-sm-12 col-md-6">
                 Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
             </div>
         </div>
-
-
 
         <div class="row story-part ">
             <div class="col"></div>
@@ -51,11 +46,21 @@
             </div>
             <div class="col"><img class="story-picture" src="/images/pictures/clown.png"></div>
         </div>
+    </section>
 
-
-
-
-
+    <section>
+        <h2>Venez voir l'incroyable !</h2>
+        {%  for show in shows %}
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{show.city}}</h5>
+                    <h6 class="card-title"> Date : {{show.date}}</h6>
+                    <p class="card-text">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.</p>
+                    <a href="#" class="btn btn-primary">Reserver des places</a>
+                </div>
+            </div>
+        {% endfor %}
     </section>
 
 {% endblock %}
