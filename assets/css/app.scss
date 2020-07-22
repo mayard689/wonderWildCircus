@@ -1,7 +1,9 @@
+@import "~bootstrap/scss/bootstrap";
+
 body {
     background-color: lightgray;
 }
 
 h1{
-    color:blue;
+    color:$primary;
 }
