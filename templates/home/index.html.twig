@@ -48,19 +48,23 @@
         </div>
     </section>
 
-    <section>
+    <section class ="container">
         <h2>Venez voir l'incroyable !</h2>
+        <div class="card-deck">
         {%  for show in shows %}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{show.city}}</h5>
-                    <h6 class="card-title"> Date : {{show.date}}</h6>
-                    <p class="card-text">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.</p>
-                    <a href="#" class="btn btn-primary">Reserver des places</a>
+            <div class="show-perspective">
+                <div class="card show-card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{show.city}}</h5>
+                        <h6 class="card-title"> Date : {{show.date|date("d/m/Y")}}</h6>
+                        <p class="card-text">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.</p>
+                        <a href="#" class="btn btn-primary">Reserver des places</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
+        </div>
     </section>
 
 {% endblock %}
