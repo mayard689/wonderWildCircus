@@ -1,0 +1,24 @@
+.introduction{
+  width:100vw;
+  height:100vh;
+
+  background-color: #FFFFFFCC;
+  background: center/cover no-repeat url("../pictures/circusTentNight.jpg");
+
+  .text-wrapper{
+    position:absolute;
+    left:10%;
+    top:20%;
+
+    p{
+      color:gold;
+      font-size: 30px;
+    }
+
+    h1{
+      color:gold;
+      font-size: 60px;
+    }
+
+  }
+}
