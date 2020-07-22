@@ -10,17 +10,17 @@ use Faker\Factory;
 
 class ShowFixtures extends Fixture
 {
-    const SHOW_NUMBER=20;
+    const SHOW_NUMBER=30;
 
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
 
         for($i=0; $i<self::SHOW_NUMBER; $i++){
-            $city=$this->faker->city;
+            $city=$faker->city;
 
             $show = new Show();
-            $show->setDate(new DateTime($faker->date()));
+            $show->setDate($faker->dateTimeBetween('-1 years', '2021/12/31'));
             $show->setCity($city);
             $show->setQuantity($faker->randomNumber(2));
 
