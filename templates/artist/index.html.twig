@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('artist') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {{ encore_entry_script_tags('artist') }}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: "ease-out",
+            duration: 600,
+        });
+    </script>
+
+{% endblock %}
+
+{% block title %}Nous avons tous quelque chose de spécial !{% endblock %}
+
+{% block body %}
+    <h1>Nous avons tous quelque chose de spécial !</h1>
+
+    <section class="artists container">
+        {% for artist in artists %}
+            {{ include('artist/_artistLine.html.twig', {'artist': artist}) }}
+        {% else %}
+            <p colspan="10">no records found</p>
+        {% endfor %}
+    </section>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('artist_new') }}">Create new</a>
+    {%  endif %}
+{% endblock %}

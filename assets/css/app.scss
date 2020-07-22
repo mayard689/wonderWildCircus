@@ -17,13 +17,11 @@
     src: url(../fonts/montserrat-light.ttf) format('truetype');
 }
 
-body {
-
-}
-
 h1{
     font-family: "CircusCaps";
-    color:$primary;
+    color: $primary;
+    margin-top: $navbar-height + 10px;
+    text-align: center;
 }
 
 h2{
