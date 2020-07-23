@@ -62,3 +62,12 @@
   margin:$spacing-h-small;
   max-height:10vw;
 }
+
+@media screen and (max-width: 640px) {
+  .navbar-nav{
+    background:$dark;
+  }
+  .navbar{
+    color:$primary;
+  }
+}
