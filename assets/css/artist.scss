@@ -26,11 +26,10 @@
   max-width:70vw;
   max-height:70vw;
 
-  xoverflow:hidden;
   border-radius:50%;
 
   margin:auto;
-  margin-top:20px;
+  margin-bottom:0;
 
   display:flex;
   align-items: center;
@@ -44,7 +43,8 @@
 .artiste-picture-wrapper{
   position:relative;
   bottom:0;
-
+  display:flex;
+  align-items: end;
   &:after {
     position: absolute;
     bottom: -17px;
@@ -96,4 +96,14 @@
     border-bottom-right-radius: $a 0px;
     border-bottom-left-radius:  $b 100px;
   }
+}
+
+.title{
+  font-size:24px;
+  color:$primary;
+}
+
+.name{
+  font-size:20px;
+  font-style: italic;
 }

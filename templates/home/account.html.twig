@@ -3,6 +3,7 @@
 {% block stylesheets %}
     {{ parent()}}
     {{ encore_entry_link_tags('account') }}
+    {{ encore_entry_link_tags('show') }}
 {% endblock %}
 
 {% block javascripts %}
@@ -15,18 +16,28 @@
 
     <section class ="container">
 
-        <h2> Vos réservations </h2>
+        <h2> Vos reservations </h2>
         <div class="card-deck">
             {%  for booking in bookings %}
 
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ booking.representation.city }}</h5>
-                            <p class="card-text">{{booking.representation.date|date("d/m/Y")}}.</p>
-                            <p class="card-text">pour {{booking.adult}} adulte(s) et {{booking.child}} enfant(s).</p>
+                <div class="box">
+
+                    <div class="card show-card box-inner shadow" >
+
+                        <div class="box-front">
+                            <div class="img-wrapper">
+                                <img class="card-img-top" src="/images/shows/{{ booking.representation.picture }}.jpg" alt="Show picture">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ booking.representation.city }}</h5>
+                                <p class="card-text">{{booking.representation.date|date("d/m/Y")}}.</p>
+                                <p class="card-text">pour {{booking.adult}} adulte(s) et {{booking.child}} enfant(s).</p>
+                            </div>
                         </div>
+
                     </div>
+
+                </div>
 
             {% endfor %}
         </div>
