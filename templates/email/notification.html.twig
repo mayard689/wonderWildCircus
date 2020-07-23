@@ -1,0 +1,30 @@
+{% extends 'email.html.twig' %}
+
+{% block title %}Votre nouveau spectacle{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block main %}
+
+    <h1 style="
+        font-family: 'Julius Sans One';
+        font-family:'Roboto';
+        color:#A10115;
+    ">Bonjour</h1>
+
+    <h2 style="
+        color:#D72C16;
+    ">Votre réservation pour notre spectacle de {{ booking.representation.city }} qui se déroulera le {{ booking.representation.date|date("d/m/Y") }} a bien été pris en compte.</h2>
+
+    <p style="
+        color:#000000;
+    ">Retrouvez le en cliquant sur le lien suivant :</p>
+
+    <a href=" {{ app.request.schemeAndHttpHost~path('wild_circus_index') }}"> Nos spectacles </a>
+
+    <p style="
+        color:#000000;
+    ">Le jour venu, présentez vous avec votre carte d'identité et indiquez la référence : {{ booking.id}}</p>
+{% endblock %}
