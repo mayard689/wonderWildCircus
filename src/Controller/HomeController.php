@@ -33,6 +33,23 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/my-account", name="wild_circus_account")
+     */
+    public function userPage(
+        BookingRepository $bookingRepository,
+        ArtistRepository $artistRepository,
+        ?UserInterface $user
+    ) :Response {
+        $bookings = $bookingRepository->findBy(array('user' => $user ));
+        $artists = $artistRepository->findThree();
+
+        return $this->render('home/account.html.twig', [
+            'bookings' => $bookings,
+            'artists' => $artists,
+        ]);
+    }
+
+    /**
      * @Route("/book/{id}", name="wild_circus_book")
      */
     public function book(
@@ -40,9 +57,8 @@ class HomeController extends AbstractController
         Show $show,
         BookingRepository $bookingRepository,
         ?UserInterface $user,
-        MailerInterface $mailer)
-    {
-
+        MailerInterface $mailer
+    ) {
         if ($user == null) {
             return $this->redirectToRoute('app_login');
         }
@@ -65,7 +81,7 @@ class HomeController extends AbstractController
                 return $this->redirectToRoute('wild_circus_book', ['id' => $booking->getRepresentation()->getId()]);
             }
 
-            if($user != $booking->getUser()) {
+            if ($user != $booking->getUser()) {
                 $this->addFlash('danger', 'Votre réservation pour la représentation de "'.$booking->getRepresentation()->getCity().'" n\'a pas pu être enregistrée.');
                 return $this->redirectToRoute('wild_circus_index');
             }

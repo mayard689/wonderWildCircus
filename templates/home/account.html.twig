@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Vous faites aussi parti de la troupe !</h1>
+
+    <section class ="container">
+
+        <h2> Vos réservations </h2>
+        <div class="card-deck">
+            {%  for booking in bookings %}
+
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ booking.representation.city }}</h5>
+                            <p class="card-text">{{booking.representation.date|date("d/m/Y")}}.</p>
+                            <p class="card-text">pour {{booking.adult}} adulte(s) et {{booking.child}} enfant(s).</p>
+                        </div>
+                    </div>
+
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
+
+
+
