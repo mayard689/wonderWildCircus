@@ -17,20 +17,39 @@
     <section class ="container">
 
 
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog shadow">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="Label">{{ show.city }}</h5>
+                        <h5 class="modal-title" id="Label">{{ show.city }} - {{ show.date|date("d/m/Y")}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        {{ show.date|date("d/m/Y")}}
+
 
                         {{ form_start(form) }}
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+
+                        <div class="form-group row">
+                            <div class="col-4">{{ form_label(form.representation) }}</div>
+                            <div class="col-sm-12 col-md-8">{{ form_widget(form.representation) }}</div>
+                            <div class="col-12">{{ form_errors(form.representation) }}</div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4">{{ form_label(form.adult) }}</div>
+                            <div class="col-sm-12 col-md-8">{{ form_widget(form.adult) }}</div>
+                            <div class="col-12">{{ form_errors(form.adult) }}</div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4">{{ form_label(form.child) }}</div>
+                            <div class="col-sm-12 col-md-8">{{ form_widget(form.child) }}</div>
+                            <div class="col-12">{{ form_errors(form.child) }}</div>
+                        </div>
+
+                            <a class="btn btn-outline-primary m-2" href="{{ path('wild_circus_index') }}" >Close</a>
+                            <button type="submit" class="btn btn-primary m-2">Save changes</button>
                         {{ form_end(form) }}
                     </div>
 

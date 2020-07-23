@@ -14,7 +14,6 @@ class BookingType extends AbstractType
         $builder
             ->add('adult')
             ->add('child')
-            ->add('user',null, ['choice_label'=>'email'])
             ->add('representation',null, ['choice_label'=>'cityDate'])
         ;
     }

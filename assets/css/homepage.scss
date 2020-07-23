@@ -67,7 +67,8 @@
   @extend %shadow !optional;
 
   background-image: url("../pictures/background.png");
-
+  background-size: cover;
+  background-position: center;
   justify-content: space-evenly;
 
   margin-top: $spacing-w-normal;
