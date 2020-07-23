@@ -1,5 +1,12 @@
 @import "_vars";
 
+:root{
+  --navbar-color-transp : white;
+  --navbar-color : white;
+  --navbar-link-color-dark : #A10115;
+  --navbar-link-color-light : #A10115;
+}
+
 .artist{
   margin: $spacing-w-normal;
   margin-top : $spacing-w-large;

@@ -5,10 +5,10 @@
     {{ encore_entry_link_tags('homepage') }}
 {% endblock %}
 
-        {% block javascripts %}
-            {{ parent()}}
-            {{ encore_entry_script_tags('homepage') }}
-        {% endblock %}
+{% block javascripts %}
+    {{ parent()}}
+    {{ encore_entry_script_tags('homepage') }}
+{% endblock %}
 
 {% block body %}
 
@@ -51,23 +51,22 @@
         </div>
     </section>
 
-        <section class="artist-list container card-deck">
-            {% for artist in artists %}
-                <div class="card artist-card" data-aos="fade-up" data-aos-offset="{{ loop.index0 * 200 }}">
+    <section class="artist-list container card-deck shadow">
+        {% for artist in artists %}
+            <div class="card artist-card shadow" data-aos="fade-up" data-aos-offset="{{ loop.index0 * 200 }}">
 
-                    <div class="img-wrapper">
+                <div class="img-wrapper">
 
-                        <img class="artist-picture shadow"
-                             src="/upload/artists/{{ artist.picture }}.jpg"
-                             alt="Photo de {{artist.name}}">
-                    </div>
-
-                    <h2 class="name">{{ artist.name }}</h2>
-
+                    <img class="artist-picture shadow"
+                         src="/upload/artists/{{ artist.picture }}.jpg"
+                         alt="Photo de {{artist.name}}">
                 </div>
-            {% endfor %}
-        </section>
 
+                <h2 class="name">{{ artist.name }}</h2>
+
+            </div>
+        {% endfor %}
+    </section>
 
     <section class ="container">
         <h2>Venez voir l'incroyable !</h2>
@@ -75,15 +74,16 @@
             {%  for show in shows %}
                 <div class="box">
 
-                    <div class="card show-card box-inner " >
+                    <div class="card show-card box-inner shadow" >
 
 
                         <div class="box-front">
-                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <div class="img-wrapper">
+                                <img class="card-img-top" src="/images/shows/{{ show.picture }}.jpg" alt="Card image cap">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{show.city}}</h5>
                                 <h6 class="card-title"> Date : {{show.date|date("d/m/Y")}}</h6>
-                                <p class="card-text">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.</p>
 
                                 <a class="btn btn-primary" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> Reserver des places </a>
 

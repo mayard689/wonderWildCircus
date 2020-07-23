@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ArtistRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArtistRepository::class)
@@ -19,41 +20,80 @@ class Artist
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 250,
+     *      maxMessage = "Cette valeur ne peut dépasser {{ limit }} caractères",
+     *      allowEmptyString = false
+     * )
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 250,
+     *      maxMessage = "Cette valeur ne peut dépasser {{ limit }} caractères",
+     *      allowEmptyString = false
+     * )
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank
      */
     private $story;
 
     /**
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur {{ value }} n'est pas de type {{ type }}."
+     * )
      */
     private $age;
 
     /**
      * @ORM\Column(type="float")
-     */
+     *
+     * @Assert\NotBlank
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur {{ value }} n'est pas de type {{ type }}."
+     * )
+     * /
     private $height;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      max = 250,
+     *      maxMessage = "Cette valeur ne peut dépasser {{ limit }} caractères",
+     *      allowEmptyString = false
+     * )
      */
     private $origin;
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank
      */
     private $particularity;
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank
      */
     private $incredible;
 
