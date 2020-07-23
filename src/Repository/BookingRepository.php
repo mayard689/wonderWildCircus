@@ -19,6 +19,19 @@ class BookingRepository extends ServiceEntityRepository
         parent::__construct($registry, Booking::class);
     }
 
+
+    public function countUsedPlaces($show)
+    {
+        $count= $this->createQueryBuilder('b')
+            ->select('SUM(b.child)+SUM(b.adult) as adultCount')
+            ->andWhere('b.representation = :representation')
+            ->setParameter('representation', $show)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return $count;
+    }
+
     // /**
     //  * @return Booking[] Returns an array of Booking objects
     //  */

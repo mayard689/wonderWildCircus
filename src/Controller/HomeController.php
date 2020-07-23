@@ -6,6 +6,7 @@ use App\Entity\Booking;
 use App\Entity\Show;
 use App\Form\BookingType;
 use App\Repository\ArtistRepository;
+use App\Repository\BookingRepository;
 use App\Repository\ShowRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,7 +33,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/book/{id}", name="wild_circus_book")
      */
-    public function book(Request $request, Show $show, ShowRepository $showRepository, ArtistRepository $artistRepository, ?UserInterface $user)
+    public function book(Request $request, Show $show, BookingRepository $bookingRepository, ShowRepository $showRepository, ArtistRepository $artistRepository, ?UserInterface $user)
     {
 
         if ($user == null) {
@@ -49,6 +50,13 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $usedPlaces = $bookingRepository->countUsedPlaces($booking->getRepresentation());
+            $remainingPlaces = $booking->getRepresentation()->getQuantity() - $usedPlaces;
+            if ( $remainingPlaces < $booking->getAdult() + $booking->getChild()) {
+                $this->addFlash('danger', 'Il reste seulement '.$remainingPlaces.'places disponibles pour la représentation que vous avez choisi.');
+                return $this->redirectToRoute('wild_circus_book', ['id' => $booking->getRepresentation()->getId()]);
+            }
 
             if($user != $booking->getUser()) {
                 $this->addFlash('danger', 'Votre réservation pour la représentation de "'.$booking->getRepresentation()->getCity().'" n\'a pas pu être enregistrée.');
