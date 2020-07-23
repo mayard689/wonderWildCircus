@@ -16,14 +16,15 @@
     <h1>Nous avons tous quelque chose de spécial !</h1>
 
     <section class="artists container">
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="btn btn-info" href="{{ path('artist_new') }}"><i class="fas fa-plus mr-1"></i>Ajouter un artiste</a>
+        {%  endif %}
+
         {% for artist in artists %}
             {{ include('artist/_artistLine.html.twig', {'artist': artist}) }}
         {% else %}
-            <p colspan="10">no records found</p>
+            <p colspan="10">Aucun artiste trouvé.</p>
         {% endfor %}
     </section>
 
-    {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('artist_new') }}">Create new</a>
-    {%  endif %}
 {% endblock %}

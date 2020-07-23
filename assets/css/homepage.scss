@@ -1,5 +1,12 @@
 @import "_vars";
 
+:root{
+  --navbar-color-transp : transparent;
+  --navbar-color : white;
+  --navbar-link-color-dark : #A10115;
+  --navbar-link-color-light : gold;
+}
+
 .introduction{
   width:100vw;
   height:100vh;
@@ -43,13 +50,9 @@
 }
 
 .show-card{
-
   margin : $spacing-w-normal;
   position:relative;
-
 }
-
-
 
 .box {
   background-color: transparent;
@@ -58,6 +61,7 @@
   perspective: 1000px;
   margin : $spacing-w-small;
 }
+
 .box-inner {
   position: relative;
   width: 100%;
@@ -66,19 +70,23 @@
   transition: transform 0.5s;
   transform-style: preserve-3d;
 }
+
 .box:hover .box-inner {
   transform: rotateY(180deg);
 }
+
 .box-front, .box-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
+
 .box-front {
   background-color: lightblue;
   color: #111111;
 }
+
 .box-back {
   background:url("../pictures/carte1.png");
   background-size:cover;
@@ -91,22 +99,17 @@
   }
 }
 
+.img-wrapper{
+  width:100%;
+  height:50%;
 
+  overflow: hidden;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  img{
+    height:100%;
+    object-fit: cover;
+  }
+}
 
 #parallax-object2, #parallax-object1{
   position:relative;
@@ -179,3 +182,4 @@
     }
   }
 }
+

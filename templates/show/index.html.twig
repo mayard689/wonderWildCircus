@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('show') }}
+{% endblock %}
+
+{% block title %}Du spectacle tous les jours !{% endblock %}
+
+{% block body %}
+    <h1>Du spectacle tous les jours !</h1>
+
+    <section class ="container">
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="btn btn-info m-2" href="{{ path('show_new') }}"><i class="fas fa-plus mr-1"></i>Ajouter une représentation</a>
+        {%  endif %}
+
+        <div class="card-deck">
+            {% for show in shows %}
+                {{ include('show/_showCard.html.twig') }}
+            {% else %}
+                    <div> no records found</div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

@@ -11,6 +11,44 @@ window.addEventListener("scroll", function(){
             parallaxObject1.style.top=backgroundShift1+'px';
         }
     }
+});
 
+$(document).ready(function(){
 
+    if($(document).scrollTop()<10){
+        $('.navbar').css({
+            'background': 'var(--navbar-color-transp)',
+        });
+
+        $('.navbar a').css({
+            'color':'var(--navbar-link-color-light)',
+        });
+    }
+
+    // faire apparaitre #text1
+    $(window).scroll(function(){
+        let posScroll = $(document).scrollTop();
+
+        if(posScroll >=1) {
+
+            $('.navbar').css({
+                'background': 'var(--navbar-color)',
+            });
+
+            $('.navbar a').css({
+                'color':'var(--navbar-link-color-dark)',
+            });
+
+        } else {
+
+            $('.navbar').css({
+                'background': 'var(--navbar-color-transp)',
+            });
+
+            $('.navbar a').css({
+                'color':'var(--navbar-link-color-light)',
+            });
+
+        }
+    });
 });

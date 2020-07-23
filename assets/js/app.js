@@ -17,46 +17,10 @@ const $ = require('jquery');
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
 
+require('@fortawesome/fontawesome-free/css/all.min.css');
+require('@fortawesome/fontawesome-free/js/all.js');
+
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
 });
 
-$(document).ready(function(){
-
-    if($(document).scrollTop()<10){
-        $('.navbar').css({
-            'background': 'var(--navbar-color-transp)',
-        });
-
-        $('.navbar a').css({
-            'color':'var(--navbar-link-color-light)',
-        });
-    }
-
-    // faire apparaitre #text1
-    $(window).scroll(function(){
-        let posScroll = $(document).scrollTop();
-
-        if(posScroll >=1) {
-
-            $('.navbar').css({
-                'background': 'var(--navbar-color)',
-            });
-
-            $('.navbar a').css({
-                'color':'var(--navbar-link-color-dark)',
-            });
-
-        } else {
-
-            $('.navbar').css({
-                'background': 'var(--navbar-color-transp)',
-            });
-
-            $('.navbar a').css({
-                'color':'var(--navbar-link-color-light)',
-            });
-
-        }
-    });
-});
