@@ -28,8 +28,14 @@
 .story{
   position:relative;
 }
+
 .story-part{
-  margin: $spacing-w-normal;
+  margin: $spacing-w-small;
+
+  div{
+    align-items: center;
+    display: flex;
+  }
 }
 
 .story-picture{
@@ -49,4 +55,10 @@
     transform: rotateX(45deg);
   }
 
+}
+
+#parallax-object2, #parallax-object1{
+  position:relative;
+  top:0;
+  left:0;
 }
