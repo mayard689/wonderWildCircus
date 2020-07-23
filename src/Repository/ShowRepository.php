@@ -19,16 +19,18 @@ class ShowRepository extends ServiceEntityRepository
         parent::__construct($registry, Show::class);
     }
 
-    public function findComming()
+    public function findComming(int $number=999)
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.date > :now')
             ->setParameter('now', new \Datetime('now'))
             ->orderBy('s.date', 'ASC')
+            ->setMaxResults($number)
             ->getQuery()
             ->getResult()
             ;
     }
+
 
     // /**
     //  * @return Show[] Returns an array of Show objects

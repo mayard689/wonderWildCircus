@@ -38,3 +38,14 @@ p{
 section{
     padding: $spacing-h-large;
 }
+
+.flashes{
+    background : transparent;
+    position : absolute;
+    top : 1.5 * $navbar-height;
+    width:100vw;
+
+    div{
+        text-align: center;
+    }
+}
