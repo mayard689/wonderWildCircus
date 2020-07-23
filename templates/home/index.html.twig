@@ -33,11 +33,9 @@
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
                 similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
             </div>
-            <div class="col parallax-object" id="parallax-object1"><img class="story-picture" src="/images/pictures/acrobat.png"></div>
-        </div>
+            <div class="col-6 parallax-object" id="parallax-object1"><img class="story-picture" src="/images/pictures/acrobat.png"></div>
 
-        <div class="row story-part ">
-            <div class="col parallax-object"><img class="story-picture" src="/images/pictures/elephant.png"></div>
+            <div class="col-6 parallax-object"><img class="story-picture" src="/images/pictures/elephant.png"></div>
             <div class="col-sm-12 col-md-6">
                 Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
             </div>
@@ -52,6 +50,24 @@
             <div class="col parallax-object" id="parallax-object2"><img class="story-picture" src="/images/pictures/clown.png"></div>
         </div>
     </section>
+
+        <section class="artist-list container card-deck">
+            {% for artist in artists %}
+                <div class="card artist-card" data-aos="fade-up" data-aos-offset="{{ loop.index0 * 200 }}">
+
+                    <div class="img-wrapper">
+
+                        <img class="artist-picture shadow"
+                             src="/upload/artists/{{ artist.picture }}.jpg"
+                             alt="Photo de {{artist.name}}">
+                    </div>
+
+                    <h2 class="name">{{ artist.name }}</h2>
+
+                </div>
+            {% endfor %}
+        </section>
+
 
     <section class ="container">
         <h2>Venez voir l'incroyable !</h2>
