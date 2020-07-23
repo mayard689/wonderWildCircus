@@ -1,4 +1,8 @@
 
+.navbar-toggler{
+  color:gold;
+  z-index:100;
+}
 
 .navbar-nav .active > .nav-link {
   color: var(--primary);
@@ -10,7 +14,7 @@
   height : $navbar-height;
   z-index:10;
   background : $light;
-  
+
   .navbar-nav {
     justify-content: flex-end;
     width: 100%;
@@ -54,6 +58,7 @@
 }
 
 .navbar-logo{
-  height:$navbar-height * 0.8;
+  height:$navbar-height * 0.7;
   margin:$spacing-h-small;
+  max-height:10vw;
 }
