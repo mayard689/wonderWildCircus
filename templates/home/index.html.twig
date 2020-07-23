@@ -73,7 +73,6 @@
         <h2>Venez voir l'incroyable !</h2>
         <div class="card-deck">
         {%  for show in shows %}
-            {%  set showId='modal-show-'~show.id %}
             <div class="show-perspective">
                 <div class="card show-card" style="width: 18rem;">
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -82,30 +81,8 @@
                         <h6 class="card-title"> Date : {{show.date|date("d/m/Y")}}</h6>
                         <p class="card-text">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.</p>
 
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{showId}}">
-                            Reserver des places
-                        </button>
-                    </div>
-                </div>
-            </div>
+                        <a class="btn btn-primary" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> Reserver des places </a>
 
-            <!-- Modal -->
-            <div class="modal fade" id="{{showId}}" tabindex="-1" role="dialog" aria-labelledby="{{showId}}Label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="{{showId}}Label">{{ show.city }}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            {{ show.date|date("d/m/Y")}}
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
                     </div>
                 </div>
             </div>

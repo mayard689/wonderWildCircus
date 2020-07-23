@@ -45,6 +45,11 @@ class Show
         $this->bookings = new ArrayCollection();
     }
 
+    public function cityDate() : string
+    {
+        return $this->getCity().' '.$this->getDate()->format('d-m-Y');
+    }
+
     public function getId(): ?int
     {
         return $this->id;
