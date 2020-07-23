@@ -23,20 +23,24 @@
   border-radius:50%;
 
   margin:auto;
+  margin-top:20px;
+
   display:flex;
   align-items: center;
   justify-content: center;
 
   object-fit: cover;
+
+  vertical-align: bottom;
 }
 
 .artiste-picture-wrapper{
   position:relative;
-  top:0;
+  bottom:0;
 
   &:after {
     position: absolute;
-    bottom: -20px;
+    bottom: -17px;
     left: 50%;
     transform:translateX(-20px);
 
@@ -51,7 +55,7 @@
 
   &:before {
     position: absolute;
-    bottom: -95px - 20px;
+    bottom: -95px - 17px;
     left: 50%;
 
     content:" ";

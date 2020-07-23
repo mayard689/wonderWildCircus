@@ -3,7 +3,7 @@
 <div class="artist row">
 
     <div class="col-sm-12 col-md-6 artiste-picture-wrapper" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out">
-        <img class="artist-picture"
+        <img class="artist-picture shadow"
              src="/upload/artists/{{ artist.picture }}.jpg"
              alt="Photo de {{artist.name}}">
     </div>
@@ -12,14 +12,7 @@
         <p class="name">{{ artist.name }}</p>
         <p class="title">{{ artist.title }}</p>
         <p class="story">{{ artist.story }}</p>
-        {#
-        <p>{{ artist.age }}</p>
-        <p>{{ artist.height }}</p>
-        <p>{{ artist.origin }}</p>
-        <p>{{ artist.particularity }}</p>
-        <p>{{ artist.incredible }}</p>#}
         <p>
-            {#<a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>#}
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ modalName }}">
                 Launch demo modal
             </button>
@@ -33,7 +26,6 @@
 
 
     <!-- Modal -->
-
     <div class="modal fade" id="{{ modalName }}" tabindex="-1" role="dialog" aria-labelledby="{{ modalName }}Label" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

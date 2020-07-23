@@ -19,6 +19,19 @@ class ArtistRepository extends ServiceEntityRepository
         parent::__construct($registry, Artist::class);
     }
 
+
+
+    public function findThree()
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a, RAND() AS HIDDEN r')
+            ->orderBy('r', 'ASC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Artist[] Returns an array of Artist objects
     //  */

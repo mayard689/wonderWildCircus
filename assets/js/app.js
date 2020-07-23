@@ -21,4 +21,42 @@ $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
 });
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+$(document).ready(function(){
+
+    if($(document).scrollTop()<10){
+        $('.navbar').css({
+            'background': 'var(--navbar-color-transp)',
+        });
+
+        $('.navbar a').css({
+            'color':'var(--navbar-link-color-light)',
+        });
+    }
+
+    // faire apparaitre #text1
+    $(window).scroll(function(){
+        let posScroll = $(document).scrollTop();
+
+        if(posScroll >=1) {
+
+            $('.navbar').css({
+                'background': 'var(--navbar-color)',
+            });
+
+            $('.navbar a').css({
+                'color':'var(--navbar-link-color-dark)',
+            });
+
+        } else {
+
+            $('.navbar').css({
+                'background': 'var(--navbar-color-transp)',
+            });
+
+            $('.navbar a').css({
+                'color':'var(--navbar-link-color-light)',
+            });
+
+        }
+    });
+});
