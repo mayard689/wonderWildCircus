@@ -68,7 +68,7 @@ class Artist
      *     type="integer",
      *     message="La valeur {{ value }} n'est pas de type {{ type }}."
      * )
-     * /
+     */
     private $height;
 
     /**

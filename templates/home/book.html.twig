@@ -10,7 +10,7 @@
             <div class="modal-dialog shadow">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="Label">{{ show.city }} - {{ show.date|date("d/m/Y")}}</h5>
+                        <h4 class="modal-title" id="Label">Représentation de {{ show.city }} - {{ show.date|date("d/m/Y")}}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -38,7 +38,7 @@
                                 <div class="col-12">{{ form_errors(form.child) }}</div>
                             </div>
 
-                            <a class="btn btn-outline-primary m-2" href="{{ path('wild_circus_index') }}" >Annuler</a>
+                            <a class="btn btn-outline-primary mr-2" href="{{ path('wild_circus_index') }}" >Annuler</a>
                             <button type="submit" class="btn btn-primary m-2">Confirmer la reservation</button>
                         {{ form_end(form) }}
                     </div>

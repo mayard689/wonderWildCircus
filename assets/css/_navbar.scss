@@ -14,6 +14,7 @@
   height : $navbar-height;
   z-index:10;
   background : $light;
+  transition:0.5s;
 
   .navbar-nav {
     justify-content: flex-end;
