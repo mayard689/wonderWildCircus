@@ -39,6 +39,7 @@ class ShowController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $show->setPicture("show".rand(1,19));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($show);
             $entityManager->flush();

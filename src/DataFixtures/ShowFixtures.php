@@ -22,6 +22,7 @@ class ShowFixtures extends Fixture
             $show->setDate($faker->dateTimeBetween('-1 years', '2021/12/31'));
             $show->setCity($city);
             $show->setQuantity($faker->randomNumber(2));
+            $show->setPicture("show".rand(1,19));
 
             $this->addReference('show_' .$i, $show);
             $manager->persist($show);

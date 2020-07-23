@@ -20,7 +20,7 @@ class UserFixtures extends Fixture
     {
         // Création d’un utilisateur de type “auteur”
         $subscriber = new User();
-        $subscriber->setEmail('subscriber@monsite.com');
+        $subscriber->setEmail('maillard.adrien@gmail.com');
         $subscriber->setRoles(['ROLE_SUBSCRIBER']);
         $subscriber->setPassword($this->passwordEncoder->encodePassword(
             $subscriber,

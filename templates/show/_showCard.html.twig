@@ -1,0 +1,35 @@
+<div class="box
+    {% if not is_granted('ROLE_ADMIN') %}
+      hover-active
+    {% endif %}
+">
+
+    <div class="card show-card box-inner shadow" >
+
+        <div class="box-front">
+            <div class="img-wrapper">
+                <img class="card-img-top" src="/images/shows/{{ show.picture }}.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{show.city}}</h5>
+                <h6 class="card-title"> Date : {{show.date|date("d/m/Y")}}</h6>
+
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a class="btn btn-info m-2" href="{{ path('show_edit', { 'id':show.id }) }}"><i class="far fa-edit mr-1"></i>
+                        Editer la représentation</a>
+                {%  else %}
+                    <a class="btn btn-primary m-2" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> <i class="far fa-laugh-wink mr-1"></i>
+                        Reserver des places </a>
+                {%  endif %}
+
+            </div>
+        </div>
+        <div class="box-back">
+            <a class="btn btn-primary m-2" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> <i class="far fa-laugh-wink mr-1"></i>
+                Reserver plutôt ici </a>
+        </div>
+
+
+    </div>
+
+</div>

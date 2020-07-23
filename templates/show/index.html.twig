@@ -1,45 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Show index{% endblock %}
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('show') }}
+{% endblock %}
+
+{% block title %}Du spectacle tous les jours !{% endblock %}
 
 {% block body %}
-    <h1>Show index</h1>
+    <h1>Du spectacle tous les jours !</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Date</th>
-                <th>City</th>
-                <th>Quantity</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for show in shows %}
-            <tr>
-                <td>{{ show.id }}</td>
-                <td>{{ show.date ? show.date|date('Y-m-d') : '' }}</td>
-                <td>{{ show.city }}</td>
-                <td>{{ show.quantity }}</td>
-                <td>
-                    <a href="{{ path('show_show', {'id': show.id}) }}">show</a>
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('show_edit', {'id': show.id}) }}">edit</a>
-                    {%  endif %}
+    <section class ="container">
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="btn btn-info m-2" href="{{ path('show_new') }}"><i class="fas fa-plus mr-1"></i>Ajouter une représentation</a>
+        {%  endif %}
 
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="card-deck">
+            {% for show in shows %}
+                {{ include('show/_showCard.html.twig') }}
+            {% else %}
+                    <div> no records found</div>
+            {% endfor %}
+        </div>
+    </section>
 
-
-    {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('show_new') }}">Create new</a>
-    {%  endif %}
 {% endblock %}
