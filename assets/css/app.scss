@@ -42,6 +42,11 @@ p{
     color:$dark;
 }
 
+label{
+    font-size:20px;
+    color : $primary;
+}
+
 section{
     padding: $spacing-h-large;
 }
@@ -54,5 +59,14 @@ section{
 
     div{
         text-align: center;
+    }
+}
+
+footer{
+    background : $primary;
+    color:gold;
+
+    a{
+        color:gold;
     }
 }

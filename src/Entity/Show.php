@@ -6,6 +6,7 @@ use App\Repository\ShowRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ShowRepository::class)
@@ -22,16 +23,24 @@ class Show
 
     /**
      * @ORM\Column(type="date")
+     *
+     * @Assert\NotBlank
+     * @Assert\GreaterThan("today",message="La date indiquée ne peut pas être avant {{ compared_value }}")
      */
     private $date;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank
      */
     private $city;
 
     /**
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank
+     * @Assert\GreaterThan(0, message="Le nombre de places disponible ne peut être inférieur à {{ compared_value }}")
      */
     private $quantity;
 
