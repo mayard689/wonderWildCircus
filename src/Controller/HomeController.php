@@ -11,6 +11,8 @@ use App\Repository\ShowRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -33,7 +35,12 @@ class HomeController extends AbstractController
     /**
      * @Route("/book/{id}", name="wild_circus_book")
      */
-    public function book(Request $request, Show $show, BookingRepository $bookingRepository, ShowRepository $showRepository, ArtistRepository $artistRepository, ?UserInterface $user)
+    public function book(
+        Request $request,
+        Show $show,
+        BookingRepository $bookingRepository,
+        ?UserInterface $user,
+        MailerInterface $mailer)
     {
 
         if ($user == null) {
@@ -69,8 +76,8 @@ class HomeController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Votre réservation pour la représentation de "'.$booking->getRepresentation()->getCity().'" a été enregistrée');
+            $this->sendNewProgramNotification($booking, $mailer, $user->getUsername());
             return $this->redirectToRoute('wild_circus_index');
-            //$this->sendNewProgramNotification($program, $mailer);
 
 
         }
@@ -79,5 +86,20 @@ class HomeController extends AbstractController
             'show' => $show,
             'form' => $form->createView(),
         ]);
+    }
+
+    private function sendNewProgramNotification(Booking $booking, MailerInterface $mailer, string $email)
+    {
+
+        //$mailerFrom=$this->getParameter("mailer_from");
+        $email = (new Email())
+            ->from('doc-albert@laposte.net')
+            ->to($email)
+            ->subject('Votre réservation a bien été prise en compte')
+            ->html($this->renderView('email/notification.html.twig',[
+                'booking' => $booking,
+            ]));
+
+        $mailer->send($email);
     }
 }
