@@ -1,0 +1,16 @@
+
+.page-footer{
+  margin-top: $spacing-w-large;
+  position:relative;
+
+  &:before{
+    $height : 20vw;
+    position:absolute;
+    top: -$height;
+
+    content:" ";
+    width:100%;
+    height: $height;
+    background: center/contain repeat url("../pictures/crowd.png");
+  }
+}
