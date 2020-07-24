@@ -4,13 +4,13 @@
   position:relative;
 
   &:before{
-    $height : 20vw;
+    $height : 7vw;
     position:absolute;
     top: -$height;
 
     content:" ";
     width:100%;
     height: $height;
-    background: center/contain repeat url("../pictures/crowd.png");
+    background: bottom/contain repeat-x url("../pictures/crowd.png");
   }
 }
