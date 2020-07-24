@@ -15,10 +15,12 @@
                 <h6 class="card-title"> Date : {{show.date|date("d/m/Y")}}</h6>
 
                 {% if is_granted('ROLE_ADMIN') %}
-                    <a class="btn btn-info m-2" href="{{ path('show_edit', { 'id':show.id }) }}"><i class="far fa-edit mr-1"></i>
-                        Editer la représentation</a>
+                    <a class="btn btn-info btn-sm w-100 mr-2" href="{{ path('show_edit', { 'id':show.id }) }}"><i class="far fa-edit mr-1"></i>
+                        Editer
+                    </a>
+                    {{ include('show/_delete_form.html.twig') }}
                 {%  else %}
-                    <a class="btn btn-primary m-2" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> <i class="far fa-laugh-wink mr-1"></i>
+                    <a class="btn btn-primary mt-2" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> <i class="far fa-laugh-wink mr-1"></i>
                         Reserver des places </a>
                 {%  endif %}
 
