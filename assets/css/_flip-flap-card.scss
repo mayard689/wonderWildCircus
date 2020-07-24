@@ -4,15 +4,16 @@
   height: 347px;
   perspective: 1000px;
   margin : $spacing-w-small;
-}
 
-.box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
+  .box-inner {
+    margin:0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
 }
 
 .hover-active:hover .box-inner {
@@ -44,8 +45,12 @@
 
 }
 
-.box-back {
+.box:nth-of-type(odd) .box-inner .box-back {
   @include box-back("carte2.png");
+}
+
+.box:nth-of-type(even) .box-inner .box-back {
+  @include box-back("carte1.png");
 }
 
 .img-wrapper{
