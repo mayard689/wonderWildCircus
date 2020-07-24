@@ -70,33 +70,9 @@
 
     <section class ="container">
         <h2>Venez voir l'incroyable !</h2>
-        <div class="card-deck">
+        <div class="card-deck  justify-content-around">
             {%  for show in shows %}
-                <div class="box">
-
-                    <div class="card show-card box-inner shadow" >
-
-
-                        <div class="box-front">
-                            <div class="img-wrapper">
-                                <img class="card-img-top" src="/images/shows/{{ show.picture }}.jpg" alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{show.city}}</h5>
-                                <h6 class="card-title"> Date : {{show.date|date("d/m/Y")}}</h6>
-
-                                <a class="btn btn-primary" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> Reserver des places </a>
-
-                            </div>
-                        </div>
-                        <div class="box-back">
-                            <a class="btn btn-primary" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> Reserver plutôt ici </a>
-                        </div>
-
-
-                    </div>
-
-                </div>
+                {{ include('show/_showCard.html.twig') }}
             {% endfor %}
         </div>
     </section>
