@@ -5,7 +5,7 @@
 }
 
 .navbar-nav .active > .nav-link {
-  color: var(--primary);
+  color: $primary;
 }
 
 .navbar {
@@ -13,7 +13,7 @@
   padding:0;
   height : $navbar-height;
   z-index:10;
-  background : $light;
+  background : $background;
   transition:0.5s;
 
   .navbar-nav {
@@ -43,7 +43,7 @@
 
 //resetting navbar color theme
 .navbar-light .navbar-nav .nav-link{
-  $color: rgb(20, 70, 145);
+  $color: $light;
   color: $color;
   opacity:70%;
 
@@ -66,7 +66,7 @@
 
 @media screen and (max-width: 640px) {
   .navbar-nav{
-    background:$dark;
+    background:$background;
   }
   .navbar{
     color:$primary;

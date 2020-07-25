@@ -21,12 +21,12 @@
     top:20%;
 
     p{
-      color:gold;
+      color:$light;
       font-size: 30px;
     }
 
     h1{
-      color:gold;
+      color:$light;
       font-size: 50px;
     }
 
@@ -44,6 +44,10 @@
     align-items: center;
     display: flex;
   }
+}
+
+.story-part div{
+  justify-content: center;
 }
 
 .story-picture{
