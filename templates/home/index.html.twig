@@ -33,7 +33,7 @@
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
                 similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
             </div>
-            <div class="ccol-sm-12 col-md-6 parallax-object"><img class="story-picture" src="/images/pictures/acrobat.png"></div>
+            <div class="col-sm-12 col-md-6 parallax-object"><img class="story-picture" src="/images/pictures/acrobat.png"></div>
 
             <div class="col-sm-12 col-md-6 parallax-object"><img class="story-picture" src="/images/pictures/elephant.png"></div>
             <div class="col-sm-12 col-md-6">
@@ -70,33 +70,9 @@
 
     <section class ="container">
         <h2>Venez voir l'incroyable !</h2>
-        <div class="card-deck">
+        <div class="card-deck  justify-content-around">
             {%  for show in shows %}
-                <div class="box">
-
-                    <div class="card show-card box-inner shadow" >
-
-
-                        <div class="box-front">
-                            <div class="img-wrapper">
-                                <img class="card-img-top" src="/images/shows/{{ show.picture }}.jpg" alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{show.city}}</h5>
-                                <h6 class="card-title"> Date : {{show.date|date("d/m/Y")}}</h6>
-
-                                <a class="btn btn-primary" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> Reserver des places </a>
-
-                            </div>
-                        </div>
-                        <div class="box-back">
-                            <a class="btn btn-primary" href="{{ path('wild_circus_book', { 'id':show.id }) }}"> Reserver plutôt ici </a>
-                        </div>
-
-
-                    </div>
-
-                </div>
+                {{ include('show/_showCard.html.twig') }}
             {% endfor %}
         </div>
     </section>

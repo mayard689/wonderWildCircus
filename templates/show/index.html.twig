@@ -15,7 +15,7 @@
             <a class="btn btn-info m-2" href="{{ path('show_new') }}"><i class="fas fa-plus mr-1"></i>Ajouter une représentation</a>
         {%  endif %}
 
-        <div class="card-deck">
+        <div class="card-deck justify-content-around">
             {% for show in shows %}
                 {{ include('show/_showCard.html.twig') }}
             {% else %}
