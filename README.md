@@ -14,7 +14,7 @@ Pour l'installer :
 * Executer ```yarn install```
 * Configurer les informations de base de donnée dans le fichier env.local dans le dossier public
 * Configurer les information de messagerie, toujours dans le fichier env.local
-* Executez la commande ```bin/console doctrine:database:create``` pour creer la base de donnée puis ```bin/console doctrine:schema;update --force``` pour construire les tables
+* Executez la commande ```bin/console doctrine:database:create``` pour creer la base de donnée puis ```bin/console doctrine:schema:update --force``` pour construire les tables
 * Enfin, executez ```bin/console doctrine:fixture:load``` pour creer un compte administrateur et un compte abonné ainsi qu'une troupe fictive
 
 # Execution
