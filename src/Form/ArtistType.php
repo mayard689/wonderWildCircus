@@ -6,6 +6,7 @@ use App\Entity\Artist;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ArtistType extends AbstractType
 {
@@ -20,6 +21,14 @@ class ArtistType extends AbstractType
             ->add('origin')
             ->add('particularity')
             ->add('incredible')
+            ->add('pictureFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => false,
+                'download_label' => '...',
+                'download_uri' => false,
+                'image_uri' => true,
+                'asset_helper' => true,
+            ])
         ;
     }
 
